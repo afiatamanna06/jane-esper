@@ -7,17 +7,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00040f",
-        white: '#ffffff',
-        secondary: "#00f6ff",
-        dimWhite: "rgba(255, 255, 255, 0.7)",
-        dimBlue: "rgba(9, 151, 124, 0.1)",
+        "deep-blue": "#010026",
+        blue: "#2CBCE9",
+        red: "#DC4492",
+        yellow: "#FDCC49",
+        grey: "#ededed",
+        "dark-grey": "#757575",
+        "opaque-black": "rgba(0,0,0,0.35)",
       },
+      backgroundImage: (theme) => ({
+        "gradient-rainbow":
+          "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
+
+        "gradient-rainblue":
+          "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
+      }),
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+        opensans: ["Open Sans", "sans-serif"],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      content: {
+        brush: "url('./assets/brush.png')",
+        person1: "url('./assets/person-1.png')",
+        person2: "url('./assets/person-2.png')",
+        person3: "url('./assets/person-3.png')",
       },
     },
     screens: {
