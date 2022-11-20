@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NavBar from "./components/navigation/NavBar";
 import UseMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <div className="App bg-deep-blue">
-      
+      <NavBar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </div>
   );
 }
