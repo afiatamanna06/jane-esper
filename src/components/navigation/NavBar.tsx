@@ -7,15 +7,19 @@ import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 
 interface propTypes {
+  isTopOfPage: any;
   selectedPage: any;
   setSelectedPage: any;
 }
 
-function NavBar({ selectedPage, setSelectedPage }: propTypes) {
+function NavBar({ isTopOfPage, selectedPage, setSelectedPage }: propTypes) {
+
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = UseMediaQuery("(min-width: 768px)");
+  const navbarBackground = isTopOfPage ? "" : "bg-red"
+
   return (
-    <nav className={`z-40 w-full fixed top-0 py-6`}>
+    <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
       <div className="flex items-center justify-between mx-auto w-5/6">
         <h4 className="font-playfair text-3xl font-bold">JE</h4>
         {isAboveSmallScreens ? (
