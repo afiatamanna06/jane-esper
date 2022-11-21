@@ -1,9 +1,25 @@
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
-
-function NavLink() {
-  return (
-    <div>NavLink</div>
-  )
+interface propTypes {
+  page: string;
+  selectedPage: any;
+  setSelectedPage: any;
 }
 
-export default NavLink
+function NavLink({ page, selectedPage, setSelectedPage }: propTypes) {
+  const lowerCasePage = page.toLowerCase();
+
+  return (
+    <AnchorLink
+      className={`${
+        selectedPage === lowerCasePage ? "text-yellow" : "text-white"
+      } hover:text-yellow transition duration-500`}
+      href={`#${lowerCasePage}`}
+      onClick={() => setSelectedPage(lowerCasePage)}
+    >
+      {page}
+    </AnchorLink>
+  );
+}
+
+export default NavLink;
