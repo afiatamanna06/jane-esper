@@ -3,6 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import UseMediaQuery from "../../hooks/useMediaQuery";
 import { navData } from "./NavData";
 import NavLink from "./NavLink";
+import { FiMenu } from "react-icons/fi"
 
 interface propTypes {
   selectedPage: any;
@@ -23,9 +24,9 @@ function NavBar({ selectedPage, setSelectedPage }: propTypes) {
                   ))}
                 </div>
               ) : (
-                <div>
-
-                </div>
+                <button className="rounded-full bg-red p-2" onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                  <FiMenu color="white" size={20} />
+                </button>
               )}
           </div>
       </nav>
