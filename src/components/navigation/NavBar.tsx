@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import UseMediaQuery from "../../hooks/useMediaQuery";
 import { navData } from "./NavData";
 import NavLink from "./NavLink";
