@@ -2,6 +2,8 @@ import UseMediaQuery from "../../hooks/useMediaQuery";
 import LineGradient from "../common/LineGradient";
 import { motion } from "framer-motion";
 import SkillsImage from "../../assets/skills-image.png";
+import { skillsData } from "./SkillsData";
+import SkillsCard from "./SkillsCard";
 
 function MySkills() {
   const isAboveMediaScreen = UseMediaQuery("(min-width: 1060px)");
@@ -42,7 +44,9 @@ function MySkills() {
       </div>
 
       <div className="md:flex md:justify-between gap-32 mt-16">
-        
+        {skillsData.map(({id, title, description, delay, color}) => (
+          <SkillsCard key={id} id={id} title={title} description={description} delay={delay} color={color} />
+        ))}
       </div>
     </section>
   );

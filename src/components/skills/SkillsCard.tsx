@@ -22,11 +22,11 @@ function SkillsCard({ id, title, delay, color, description }: propTypes) {
       }}
     >
       <div className="relative h-32">
-        <div className="z-10">
+        <div className="z-10 relative">
           <p className="font-playfair font-semibold text-5xl">{id}</p>
           <p className="font-playfair font-semibold text-3xl mt-3">{title}</p>
         </div>
-        <div className={`w-1/2 md:w-3/4 h-32 absolute ${color} right-0 top-0 z-[-1]`}></div>
+        <div className={`w-1/2 md:w-3/4 h-32 ${color} absolute right-0 top-0 z-1`}></div>
       </div>
       <p className="mt-5">
           {description}
