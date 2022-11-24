@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DotGroup from "./components/common/DotGroup";
+import LineGradient from "./components/common/LineGradient";
 import LandingSection from "./components/home/LandingSection";
 import NavBar from "./components/navigation/NavBar";
 import UseMediaQuery from "./hooks/useMediaQuery";
@@ -34,6 +35,7 @@ function App() {
         )}
         <LandingSection setSelectedPage={setSelectedPage} />
       </div>
+      <LineGradient />
     </div>
   );
 }
