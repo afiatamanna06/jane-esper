@@ -1,7 +1,7 @@
 import UseMediaQuery from "../../hooks/useMediaQuery";
 import LineGradient from "../common/LineGradient";
 import { motion } from "framer-motion";
-import SkillsImage from "../../assets/skills-image.png"
+import SkillsImage from "../../assets/skills-image.png";
 
 function MySkills() {
   const isAboveMediaScreen = UseMediaQuery("(min-width: 1060px)");
@@ -33,16 +33,31 @@ function MySkills() {
         <div className="mt-16 md:mt-0">
           {isAboveMediaScreen ? (
             <div className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10 before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]">
-              <img
-                src={SkillsImage}
-                className="z-10 w-full"
-                alt=""
-              />
+              <img src={SkillsImage} className="z-10 w-full" alt="" />
             </div>
           ) : (
-            <div></div>
+            <img src={SkillsImage} className="z-10 w-full" alt="" />
           )}
         </div>
+      </div>
+
+      <div className="md:flex md:justify-between gap-32 mt-16">
+        <motion.div
+          className="md:w-1/3 mt-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}>
+            <div className="relative h-32">
+              <div className="z-10">
+                <p></p>
+              </div>
+            </div>
+        </motion.div>
       </div>
     </section>
   );
