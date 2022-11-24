@@ -1,9 +1,9 @@
-
-
-function LineGradient() {
-  return (
-    <div>LineGradient</div>
-  )
+interface propTypes {
+  width?: string;
 }
 
-export default LineGradient
+function LineGradient({ width = "w-full" }: propTypes) {
+  return <div className={`h-0.5 ${width} bg-gradient-rainblue`}></div>;
+}
+
+export default LineGradient;
