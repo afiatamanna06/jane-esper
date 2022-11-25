@@ -9,11 +9,11 @@ interface propTypes {
 
 function TestimonialsCard({ image, delay, color, description }: propTypes) {
 
-  const testimonialStyles = `mx-auto relative mx-w-[400px] h-[350px] flex flex-col justify-end pt-16 mt-48 before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2`;
+  const testimonialStyles = `mx-auto relative max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48 before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2`;
 
   return (
     <motion.div
-      className={`${color} before:${image} ${testimonialStyles}`}
+      className={`${color} ${testimonialStyles} before:${image}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
@@ -23,7 +23,7 @@ function TestimonialsCard({ image, delay, color, description }: propTypes) {
         visible: { opacity: 1, scale: 1 },
       }}
     >
-      <p className="font-playfair text-6xl">"</p>
+      <p className="font-playfair text-6xl">“</p>
       <p className="text-center text-xl">{description}</p>
     </motion.div>
   );
