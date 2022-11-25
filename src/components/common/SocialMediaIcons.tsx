@@ -1,5 +1,5 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { socialLinks } from "./SocialMediaData";
-import { Route } from "react-router-dom";
 
 function SocialMediaIcons() {
   return (
