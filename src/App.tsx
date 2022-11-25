@@ -5,6 +5,7 @@ import LandingSection from "./components/home/LandingSection";
 import NavBar from "./components/navigation/NavBar";
 import Projects from "./components/projects/Projects";
 import MySkills from "./components/skills/MySkills";
+import Testimonials from "./components/testimonials/Testimonials";
 import UseMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
         <Projects />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Testimonials />
       </div>
     </div>
   );
