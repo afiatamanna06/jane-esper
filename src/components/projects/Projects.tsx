@@ -1,6 +1,26 @@
 import LineGradient from "../common/LineGradient";
 import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const projectVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8
+  },
+  visible: {
+    opacity: 1,
+    scale: 1
+  }
+}
+
 function Projects() {
   return (
     <section id="projects" className="py-48">
@@ -23,11 +43,25 @@ function Projects() {
             <LineGradient width="w-1/3" />
           </div>
         </div>
-        
+
         <p className="mt-10 mb-10">
-            Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut fames odio in at. At magna ornare dictum lectus. Purus massa morbi purus nec eget eleifend ut elit.
+          Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
+          fames odio in at. At magna ornare dictum lectus. Purus massa morbi
+          purus nec eget eleifend ut elit.
         </p>
       </motion.div>
+
+      <div className="flex justify-center">
+        <motion.div
+          className="sm:grid sm:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={containerVariants}
+        >
+          
+        </motion.div>
+      </div>
     </section>
   );
 }
