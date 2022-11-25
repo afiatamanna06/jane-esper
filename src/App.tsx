@@ -3,6 +3,7 @@ import DotGroup from "./components/common/DotGroup";
 import LineGradient from "./components/common/LineGradient";
 import LandingSection from "./components/home/LandingSection";
 import NavBar from "./components/navigation/NavBar";
+import Projects from "./components/projects/Projects";
 import MySkills from "./components/skills/MySkills";
 import UseMediaQuery from "./hooks/useMediaQuery";
 
@@ -39,6 +40,10 @@ function App() {
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
         <MySkills />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Projects />
       </div>
     </div>
   );
