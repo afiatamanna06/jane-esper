@@ -10,17 +10,6 @@ const containerVariants = {
   }
 }
 
-const projectVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.8
-  },
-  visible: {
-    opacity: 1,
-    scale: 1
-  }
-}
-
 function Projects() {
   return (
     <section id="projects" className="py-48">
