@@ -59,7 +59,9 @@ function Projects() {
           viewport={{ once: true, amount: 0.5 }}
           variants={containerVariants}
         >
-          
+          <div className="flex justify-center items-center text-center p-10 bg-red max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold">
+            BEAUTIFUL USER INTERFACES
+          </div>
         </motion.div>
       </div>
     </section>
