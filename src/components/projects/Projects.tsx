@@ -1,14 +1,16 @@
 import LineGradient from "../common/LineGradient";
 import { motion } from "framer-motion";
+import { projectsData } from "./ProjectData";
+import ProjectCard from "./ProjectCard";
 
 const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 function Projects() {
   return (
@@ -50,6 +52,12 @@ function Projects() {
         >
           <div className="flex justify-center items-center text-center p-10 bg-red max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold">
             BEAUTIFUL USER INTERFACES
+          </div>
+          {projectsData.map((title) => (
+            <ProjectCard title={title} />
+          ))}
+          <div className="flex justify-center items-center text-center p-10 bg-blue max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold">
+            SMOOTH USER EXPERIENCE
           </div>
         </motion.div>
       </div>
