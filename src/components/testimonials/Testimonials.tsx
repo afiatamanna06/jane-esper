@@ -29,8 +29,8 @@ function Testimonials() {
       </motion.div>
 
       <div className="md:flex md:justify-between gap-8">
-        {testimonialsData.map(({ image, delay, color, description }) => (
-          <TestimonialsCard image={image} delay={delay} color={color} description={description} />
+        {testimonialsData.map(({ title, delay, color, description }) => (
+          <TestimonialsCard title={title} delay={delay} color={color} description={description} />
         ))}
       </div>
     </section>
