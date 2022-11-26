@@ -6,7 +6,7 @@ import TestimonialsCard from "./TestimonialsCard";
 function Testimonials() {
   
   return (
-    <section id="testimonials" className="pt-32 pb-16">
+    <section id="testimonials" className="pt-32 pb-24">
       <motion.div
         className="md:w-1/3 text-center md:text-left"
         initial="hidden"

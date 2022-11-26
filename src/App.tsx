@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DotGroup from "./components/common/DotGroup";
 import LineGradient from "./components/common/LineGradient";
+import Contact from "./components/contact/Contact";
 import LandingSection from "./components/home/LandingSection";
 import NavBar from "./components/navigation/NavBar";
 import Projects from "./components/projects/Projects";
@@ -49,6 +50,10 @@ function App() {
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
         <Testimonials />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Contact />
       </div>
     </div>
   );
