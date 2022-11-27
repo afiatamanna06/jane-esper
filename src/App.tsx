@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DotGroup from "./components/common/DotGroup";
 import LineGradient from "./components/common/LineGradient";
 import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
 import LandingSection from "./components/home/LandingSection";
 import NavBar from "./components/navigation/NavBar";
 import Projects from "./components/projects/Projects";
@@ -55,6 +56,7 @@ function App() {
       <div className="w-5/6 mx-auto md:h-full">
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 }
