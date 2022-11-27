@@ -9,6 +9,7 @@ import Projects from "./components/projects/Projects";
 import MySkills from "./components/skills/MySkills";
 import Testimonials from "./components/testimonials/Testimonials";
 import UseMediaQuery from "./hooks/useMediaQuery";
+import { motion } from "framer-motion";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -17,7 +18,10 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) setIsTopOfPage(true);
+      if (window.scrollY === 0) {
+        setIsTopOfPage(true);
+        setSelectedPage("home");
+      }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
     window.addEventListener("scroll", handleScroll);
@@ -38,23 +42,43 @@ function App() {
             setSelectedPage={setSelectedPage}
           />
         )}
-        <LandingSection setSelectedPage={setSelectedPage} />
+        <motion.div
+          onViewportEnter={() => setSelectedPage("home")}
+        >
+          <LandingSection setSelectedPage={setSelectedPage} />
+        </motion.div>
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
-        <MySkills />
+        <motion.div
+          onViewportEnter={() => setSelectedPage("skills")}
+        >
+          <MySkills />
+        </motion.div>
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
-        <Projects />
+        <motion.div
+          onViewportEnter={() => setSelectedPage("projects")}
+        >
+          <Projects />
+        </motion.div>
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
-        <Testimonials />
+        <motion.div
+          onViewportEnter={() => setSelectedPage("testimonials")}
+        >
+          <Testimonials />
+        </motion.div>
       </div>
       <LineGradient />
       <div className="w-5/6 mx-auto md:h-full">
-        <Contact />
+        <motion.div
+          onViewportEnter={() => setSelectedPage("contact")}
+        >
+          <Contact />
+        </motion.div>
       </div>
       <Footer />
     </div>
