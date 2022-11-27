@@ -6,7 +6,7 @@ function SocialMediaIcons() {
     <div className="flex justify-center md:justify-start items-center my-10 gap-5">
       {socialLinks.map(({ icon, link }) => (
         <a href={link} target="_blank" rel="noopener">
-          <div className="hover:opacity-50 transition duration-500">
+          <div className="hover:text-blue hover:opacity-80 transition duration-500">
               {icon}
           </div>
         </a>
