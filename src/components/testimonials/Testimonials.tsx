@@ -2,9 +2,14 @@ import LineGradient from "../common/LineGradient";
 import { motion } from "framer-motion";
 import { testimonialsData } from "./TestimonialsData";
 import TestimonialsCard from "./TestimonialsCard";
+import Carousel from "nuka-carousel";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import UseMediaQuery from "../../hooks/useMediaQuery";
 
 function Testimonials() {
-  
+
+  const isAboveSmallScreens = UseMediaQuery("(min-width: 1060px)");
+
   return (
     <section id="testimonials" className="pt-32 pb-24">
       <motion.div
@@ -28,10 +33,49 @@ function Testimonials() {
         </p>
       </motion.div>
 
-      <div className="md:flex md:justify-between gap-8">
-        {testimonialsData.map(({ title, delay, color, description }) => (
-          <TestimonialsCard title={title} delay={delay} color={color} description={description} />
-        ))}
+      <div className="flex justify-center">
+        <Carousel
+          autoplay={true}
+          style={{
+            width: "100%",
+            maxWidth: isAboveSmallScreens ? "80rem" : "20rem",
+            paddingBottom: "5rem"
+          }}
+          cellAlign="center"
+          slidesToShow={isAboveSmallScreens ? 3 : 1}
+          renderCenterLeftControls={({ previousSlide }) => (
+            <button
+              onClick={previousSlide}
+              className="translate-y-16 -translate-x-5"
+            >
+              <FiChevronLeft size={20} />
+            </button>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <button
+              onClick={nextSlide}
+              className="translate-y-16 translate-x-5"
+            >
+              <FiChevronRight size={20} />
+            </button>
+          )}
+          defaultControlsConfig={{
+            pagingDotsStyle: {
+              fill: "#DC4492",
+              width: "2rem",
+            },
+          }}
+          wrapAround
+        >
+          {testimonialsData.map(({ title, delay, color, description }) => (
+            <TestimonialsCard
+              title={title}
+              delay={delay}
+              color={color}
+              description={description}
+            />
+          ))}
+        </Carousel>
       </div>
     </section>
   );
