@@ -46,7 +46,7 @@ function Testimonials() {
           renderCenterLeftControls={({ previousSlide }) => (
             <button
               onClick={previousSlide}
-              className="translate-y-16 -translate-x-5"
+              className="translate-y-16 -translate-x-5 bg-gradient-rainblue rounded-full p-2 opacity-70"
             >
               <FiChevronLeft size={20} />
             </button>
@@ -54,7 +54,7 @@ function Testimonials() {
           renderCenterRightControls={({ nextSlide }) => (
             <button
               onClick={nextSlide}
-              className="translate-y-16 translate-x-5"
+              className="translate-y-16 translate-x-5 bg-gradient-rainblue rounded-full p-2 opacity-70"
             >
               <FiChevronRight size={20} />
             </button>
