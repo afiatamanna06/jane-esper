@@ -9,7 +9,7 @@ interface propTypes {
 
 function TestimonialsCard({ delay, color, description, title }: propTypes) {
 
-  const testimonialStyles = `mx-auto relative max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48 cursor-pointer`;
+  const testimonialStyles = `mx-auto relative w-full md:max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48 cursor-pointer`;
   const testimonialTitle = title.split(" ").join("-").toLowerCase() 
 
   return (

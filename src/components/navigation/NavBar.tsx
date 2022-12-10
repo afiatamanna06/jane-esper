@@ -12,10 +12,9 @@ interface propTypes {
 }
 
 function NavBar({ isTopOfPage, selectedPage, setSelectedPage }: propTypes) {
-
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = UseMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-red"
+  const navbarBackground = isTopOfPage ? "" : "bg-red";
 
   return (
     <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
@@ -29,6 +28,8 @@ function NavBar({ isTopOfPage, selectedPage, setSelectedPage }: propTypes) {
                 page={page}
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                isMenuToggled={isMenuToggled}
+                setIsMenuToggled={setIsMenuToggled}
               />
             ))}
           </div>
@@ -42,9 +43,7 @@ function NavBar({ isTopOfPage, selectedPage, setSelectedPage }: propTypes) {
         )}
 
         {!isAboveSmallScreens && isMenuToggled && (
-          <div
-            className="fixed right-0 bottom-0 h-full bg-blue w-[18rem]"
-          >
+          <div className="fixed right-0 bottom-0 h-full bg-blue w-[18rem]">
             <div className="flex justify-end p-8">
               <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
                 <IoClose color="white" size={22} />
@@ -57,6 +56,8 @@ function NavBar({ isTopOfPage, selectedPage, setSelectedPage }: propTypes) {
                   page={page}
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
+                  isMenuToggled={isMenuToggled}
+                  setIsMenuToggled={setIsMenuToggled}
                 />
               ))}
             </div>
