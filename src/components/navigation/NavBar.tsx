@@ -4,6 +4,7 @@ import { navData } from "./NavData";
 import NavLink from "./NavLink";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 interface propTypes {
   isTopOfPage: any;
@@ -19,7 +20,11 @@ function NavBar({ isTopOfPage, selectedPage, setSelectedPage }: propTypes) {
   return (
     <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
       <div className="flex items-center justify-between mx-auto w-5/6">
-        <h4 className="font-playfair text-3xl font-bold">JE</h4>
+        <AnchorLink
+          href={`#home`}
+        >
+          <h4 className="font-playfair text-3xl font-bold">JE</h4>
+        </AnchorLink>
         {isAboveSmallScreens ? (
           <div className="flex justify-between gap-16 font-opensans text-md font-semibold">
             {navData.map((page) => (
